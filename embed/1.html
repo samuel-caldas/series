@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<style type="text/css">
+  #flvplayer_wrapper{
+    padding: 0;
+  }
+
+  /*Custom adspot banner*/
+  .custom-advert-banner-wrapper{
+    text-align: center;
+  }
+  .custom-advert-banner-frame iframe{
+    display: block;
+      margin-top: 20px;
+  }
+  .custom-ltas_backscreen{
+    top: 0;
+  }
+  .ltas_backscreen {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: block;
+    float: none;
+    overflow: visible;
+    z-index: 100;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+  .custom-advert-banner.ltas_adspot {
+    font-family: Verdana;
+    font-size: 11px;
+    color: #333;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    margin: 0 auto;
+    float: none;
+    padding: 5px;
+  }
+
+  .custom-advert-banner .ltas_fixed {
+    height: auto;
+    width: auto;
+    margin: 0 auto;
+    padding: 0;
+    display: block;
+    clear: none;
+    float: none;
+  }
+
+  .large-ad,.small-ad{
+    display: none;
+  }
+  .large-ad-center{
+    position: relative;
+  }
+  #player_code .large-ad-center-close {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.8);
+    border-radius: 10px 10px 10px 10px;
+    color: #FFFFFF; display: block; font-size: 16px; 
+    height: 20px; line-height: 18px;
+    position: absolute;    right: 10px;
+    text-align: center;    top: 10px;
+    width: 20px;    z-index: 9999999;
+    text-decoration: none; display: none;
+  }
+</style>
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+<meta charset="utf-8">
+</HEAD>
+<BODY topmargin=0 leftmargin=0 style="background:transparent; overflow:hidden;">
+
+
+
+
+
+    <div id="player_code">
+      
+      <span id='flvplayer'></span>
+<script type='text/javascript' src='jwplayer.js'></script>
+<script src='jquery.jplayer.min.js'></script>
+<script type='text/javascript'>
+jwplayer('flvplayer').setup({
+    image: 'http://31.207.12.187/i/01/00130/qhd7zh6eihw9.jpg',
+    previw: {
+        file: 'OK',
+        deleted: '<p><u><font size="20" color="#FF0000">File deleted.</font></u><br/><u><font size="18" color="#FFFFFF">Not availabe any more.</font></u></p>',
+        nofile: '<p><u><font size="20" color="#FF0000">No such file.</font></u><br/><u><font size="18" color="#FFFFFF">Your link is broken.</font></u></p>',
+    },
+    ratio: 'original',
+    hd: [{
+        label: "240p",
+        file: "http://31.207.12.187/qzjhoig2oiqwws4phx3ts5o25d4x6ydtbr4cwn7gsu4rd3i6suhnzy3o5v5a/video.mp4"
+    }, {
+        label: "360p",
+        file: "http://31.207.12.187/qzjhoig2oiqwws4phx3ts5o25d4x6ydtbr4cwn7gs72rd3i6suheyjeys3sq/video.mp4"
+    }],
+    hd_default: "240p",
+    modes: [{
+        type: 'flash',
+        src: 'player.swf'
+    }, {
+        type: 'html5'
+    }],
+    plugins: {
+        'timeslidertooltipplugin-3': {
+            'preview': {
+                'enabled': true,
+                'path': 'http://31.207.12.187/i/01/00130/',
+                'prefix': 'qhd7zh6eihw9',
+                'frequency': '60'
+            }
+        },
+        'ova-jw': {
+            'ads': {
+                'skipAd': {
+                    'enabled': 'true'
+                },
+                'schedule': [{
+                    'position': 'pre-roll',
+                    'tag': 'http://ad4.liverail.com/?LR_PUBLISHER_ID=14039&LR_SCHEMA=vast2-vpaid&LR_VERTICAL=preroll&LR_URL=[page_url_macro]&LR_AUTOPLAY=0&LR_CONTENT=6&LR_MUTED=0&LR_VIDEO_ID=[player_videoid_macro]&LR_TITLE=[video_title_macro]'
+                }, {
+                    'position': 'mid-roll',
+                    'tag': 'http://ad4.liverail.com/?LR_PUBLISHER_ID=14039&LR_SCHEMA=vast2-vpaid&LR_VERTICAL=preroll&LR_URL=[page_url_macro]&LR_AUTOPLAY=0&LR_CONTENT=6&LR_MUTED=0&LR_VIDEO_ID=[player_videoid_macro]&LR_TITLE=[video_title_macro]'
+                }, {
+                    'position': 'post-roll',
+                    'tag': 'http://ad4.liverail.com/?LR_PUBLISHER_ID=14039&LR_SCHEMA=vast2-vpaid&LR_VERTICAL=preroll&LR_URL=[page_url_macro]&LR_AUTOPLAY=0&LR_CONTENT=6&LR_MUTED=0&LR_VIDEO_ID=[player_videoid_macro]&LR_TITLE=[video_title_macro]'
+                }]
+            }
+        }
+    },
+    skin: 'http://static.vidto.me/play/skin/stormtrooper.zip',
+    stretching: "uniform",
+    duration: "1430",
+    controlbar: 'over',
+    width: "468",
+    height: "365",
+    provider: 'http',
+    dock: 'false',
+});
+var vvplay;
+var tt654547 = 0;
+var p0654547 = 0;
+jwplayer().onTime(function (x) {
+    if (p0654547 > 0) tt654547 += x.position - p0654547;
+    p0654547 = x.position;
+    if (21600 != 0 && tt654547 >= 21600) {
+        p0654547 = -1;
+        jwplayer().stop();
+        jwplayer().setFullscreen(false);
+        $('#play_limit_box').show();
+        $('div.video_ad').show()
+    }
+});
+jwplayer().onSeek(function (x) {
+    p0654547 = -1
+});
+jwplayer().onPlay(function (x) {
+    doPlay(x)
+});
+jwplayer().onComplete(function () {
+    $('div.video_ad').show()
+});
+
+function doPlay(x) {
+    $('div.video_ad').hide();
+    if (vvplay) return;
+    vvplay = 1;
+}
+</script>
+
+       <div class="custom-ltas_backscreen ltas_backscreen">
+
+      </div>
+
+      
+
+    </div>
+
+
+
+        <script type="text/javascript">
+          $(window).load(function(){
+			jwplayer().play();
+            setTimeout(function() {
+				var playerHeight=$("body").height();
+			});
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36911618-1']);
+  _gaq.push(['_setDomainName', 'vidto.me']);
+  _gaq.push(['_trackPageview']);
+var cache_buster=Math.random((new Date()).getMilliseconds())*100000000000000000; 
+	document.write(unescape('%3Cscript type=\"text/javascript\" src="http://ggo.directrev.com/a?type=oas_pop&sid=S0000749&cid=S0000749&cm=1&fc=1&hr=1&cb='+cache_buster+'\"%3E%3C/scr'+'ipt%3E')); 
+(function() {
+  var _script = document.createElement('script');
+  _script.type = 'text/javascript';
+  _script.async = true;
+  _script.src = 'http://d1110e4.se/?placement=400031&async';
+  
+  _script.onload = _script.onreadystatechange = function() {
+    var rs = this.readyState;
+    if(this.readyState && this.readyState != 'complete' && this.readyState != 'loaded') 
+    	return;
+    	
+    if(typeof load_ad_400031 == 'function')
+    	load_ad_400031(_script);  
+    
+  };
+
+  var _s = document.getElementsByTagName('script')[0];
+  _s.parentNode.insertBefore(_script, _s)
+})();
+</script>
+</BODY></HTML>
